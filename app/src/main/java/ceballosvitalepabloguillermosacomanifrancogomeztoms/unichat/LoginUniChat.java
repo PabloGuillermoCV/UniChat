@@ -191,12 +191,12 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
     }
 
     private boolean isEmailValid(String email) {
-        //TODO: Replace this with your own logic
+        //TODO: Aquí deberiamos de hacer uso de MySQL para verificar el email del usuario
         return email.contains("@");
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
+        //TODO: Aquí deberiamos de hacer uso de MySQL para verificar la clave del usuario, dado el email
         return password.length() > 4;
     }
 
