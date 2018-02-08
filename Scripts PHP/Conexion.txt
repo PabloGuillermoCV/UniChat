@@ -1,0 +1,9 @@
+<?php
+$Nombre_BD = "Usuarios";
+$mySQL_NombreUsTabla = "";
+$mySQL_PasswordTabla = "";
+$server_name = "localhost";
+$conectar = mysqli_connect($server_name,$mySQL_NombreUsTabla,$mySQL_PasswordTabla,$Nombre_BD);
+
+
+?>

@@ -1,0 +1,9 @@
+<?php
+require "Conexion.php";
+$NombreUs = "";
+$contrasenaUs = "";
+$consulta_Login = "select * from Usuarios where username like '$NombreUs' and password '$contrasenaUs';";
+$resultado = mysqli_query($conectar,$consulta_Login);
+
+
+?>

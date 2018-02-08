@@ -1,0 +1,17 @@
+Estos archivos "Conexion.txt" y "login.txt" son códigos PHP que la app deberia ejecutar cuando un usuario intenta ingresar al sistema. Estos dos archivos deben cambiar su extensión a ".php" y llevados a la carpeta "www" una vez que alguién instale Wampserver en su computadora para luego usarla como Servidor Local para probar la conectividad de la app
+
+que hace "Conexion.php" y cuáles son sus componentes?
+	Nombre_BD -> es el nombre de la Base de Datos que usaremos para guardar los usuarios y sus contraseñas
+	mySQL_NombreUsTabla y mySQL_PasswordTabla -> son los datos de autoria y acceso a la tabla que usaremos
+	server_name -> Nombre del servidor donde se aloja la tabla con los datos, como usaremos un Servidor Local, el mismo lleva el nombre "localhost"
+	conectar -> método de mySQL que devuelve un booleano dependiendo de si se pudo conectar correctamente al servidor o no
+
+ Conexion.php establece una conexión con el servidor local y determina si se pudo conectar o no a la base de datos
+
+que hace "Login.php" y cuáles son sus atributos?
+	NombreUs y contrasenaUs -> datos del potencial usuario obtenidos desde la app
+	consulta_Login -> consulta mySQL que determina si los datos que el potencial usuario proveyó existen en la Base de Datos
+	resultado -> consulta mySQL que determina si la conexión a estos dos script PHP fue exitosa
+
+  Login.php se encarga de realizar el chequeo del Login, una forma de saber si el login fue exitoso es preguntandole a la Base de Datos si el número de columnas de la variable resultado es mayor a 0 usando la consulta "mysqli_num_rows(<Nombre variable>)"
+	
