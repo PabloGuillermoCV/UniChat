@@ -31,5 +31,6 @@
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/ic_menu_preferences"
         tools:layout_editor_absoluteX="320dp"
-        tools:layout_editor_absoluteY="443dp" />
+        tools:layout_editor_absoluteY="443dp"
+        android:onClick="irPreferencias"/>
 </android.support.constraint.ConstraintLayout>
