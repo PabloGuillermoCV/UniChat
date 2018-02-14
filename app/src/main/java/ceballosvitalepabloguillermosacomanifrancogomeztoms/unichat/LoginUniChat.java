@@ -340,7 +340,8 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
             if (success) {
                 //creo la Actividad de salas y la mando al frente por el orden del Stack
                 Intent nuevaActi;
-                nuevaActi = new Intent(this,SalasChat.class); //esto debe estar mal cuando llamo al .class, no estaria pudiendo encontrar el nombre correcto
+                nuevaActi = new Intent(LoginUniChat.this, SalasChat.class); //el error estaba en el this, posiblemente al ser una clase embebida generaba el error
+                //aun asi especifique la clase general LoginUniChat, no se si esto puede generar otro error al ejecutarlo
                 startActivity(nuevaActi); //inicio la nueva actividad
                 finish(); //destruyo la actividad de Login para ahorrar memoria
             } else {

@@ -29,7 +29,9 @@ public class SalasChat extends AppCompatActivity {
      * @param view Contexto actual de la App
      */
     public void irSalaX(View view){
-
+        //Intent Sala = new Intent (this, ChatEscrito.class);
+        //startActivity(Sala);
+        //agrego esto comentado para probar lo del Intent. Se deberia llamar a este metodo una vez que se seleccione la sala?
     }
 
 }
