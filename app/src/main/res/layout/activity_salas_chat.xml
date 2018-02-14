@@ -7,30 +7,40 @@
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.SalasChat">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/Materia1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Requerimientos de Sistemas" />
+            android:text="@string/Materia1" />
 
         <Button
+            android:id="@+id/Materia2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Elementos de Álgebra y de Geometria" />
+            android:text="@string/Materia2" />
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_menu_preferences"
-        tools:layout_editor_absoluteX="320dp"
-        tools:layout_editor_absoluteY="443dp"
-        android:onClick="irPreferencias"/>
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/Imagen"
+        android:onClick="irPreferencias"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
 </android.support.constraint.ConstraintLayout>
