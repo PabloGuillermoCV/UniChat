@@ -10,9 +10,10 @@
         android:layout_height="wrap_content">
 
         <AutoCompleteTextView
-            android:id="@+id/email"
+            android:id="@+id/Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:completionHint="Nombre"
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:maxLines="1"

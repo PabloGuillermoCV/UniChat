@@ -109,6 +109,12 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
         });
     }
 
+
+    public void completarRegistro(View view){
+
+    }
+
+
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
             return;

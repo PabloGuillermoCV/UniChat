@@ -7,6 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+
+import static android.widget.RelativeLayout.*;
 
 
 /**
@@ -20,12 +25,13 @@ import android.view.ViewGroup;
 public class FragmentoRegistro extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
+    private static final String ARG_PARAM1 = "Nombre";
+    private static final String ARG_PARAM2 = "Clave";
+    private Button confirm,cancel;
+    private EditText Nombre,Contra;
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String NuevoNombre;
+    private String NuevaContra;
 
     private OnFragmentInteractionListener mListener;
 
@@ -55,8 +61,8 @@ public class FragmentoRegistro extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            NuevoNombre = getArguments().getString(ARG_PARAM1);
+            NuevaContra = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -64,8 +70,67 @@ public class FragmentoRegistro extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_registro, container, false);
+        View toReturn =  inflater.inflate(R.layout.fragment_registro, container, false);
+        RelativeLayout.LayoutParams parametros = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
+                RelativeLayout.LayoutParams.MATCH_PARENT);
+        //le añado al Fragment una regla: debe posicionarse por debajo del botón de Registro
+        parametros.addRule(RelativeLayout.BELOW,R.id.register_button);
+        //aplico los cambios al layout del Fragment
+        toReturn.setLayoutParams(parametros);
+        confirm = (Button)toReturn.findViewById(R.id.confirm_registration_button);
+        cancel = (Button)toReturn.findViewById(R.id.cancel_button);
+        Nombre = (EditText)toReturn.findViewById(R.id.Nombre);
+        Contra = (EditText)toReturn.findViewById(R.id.password);
+
+        agregarOyentes();
+
+        return toReturn;
     }
+
+    private void agregarOyentes(){
+        confirm.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                //pido lo escrito en los campos
+                String aux1 = Nombre.getText().toString();
+                String aux2 = Contra.getText().toString();
+                //delego la verificación y registro en el método especifico
+                completarRegistro(aux1,aux2);
+            }
+
+            }
+
+        );
+
+        cancel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //eliminar el fragment de alguna forma
+            }
+
+        });
+    }
+
+    /**
+     * método que se encargará de completar el registro
+     * Debe verificar que tanto el nombre elegido como la contraseña NO
+     * Existan en la Base de Datos, una vez chequeado eso
+     * agrega los datos a la Base como un nuevo usuario
+     */
+    public void completarRegistro(String Nom, String Con){
+        boolean success = false;
+        //verificar supuestos, si se comprueban, agregar datos a Base de Datos
+        //y poner success en true
+        if(!success){
+            //Decirle al usuario que ocurrió un error
+        }
+        else
+            //si salió bien, elimino el Fragment ya que no lo necesito más
+            getFragmentManager().beginTransaction().remove(this).commit();
+
+
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
