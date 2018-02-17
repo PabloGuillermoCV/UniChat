@@ -33,6 +33,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.ElementosBaseDeDatos.BaseDeDatos;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -44,10 +46,10 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-
+    private BaseDeDatos miBDD; //instancia única de la Base de Datos por Singleton, aunque me tira error al querer llamar a "getInstancia(Context)"
     /**
      * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
+     * TODO: remove after connecting to a real authentication system. Esto seria remplazado por la Base De Datos Room!
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
@@ -107,11 +109,6 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
                 fragmentTransaction.commit ();
             }
         });
-    }
-
-
-    public void completarRegistro(View view){
-
     }
 
 
@@ -303,7 +300,7 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
         mEmailView.setAdapter(adapter);
     }
 
-
+    //Esto deberia ser borrado ya que no se lo que hace y la base de datos reemplazaria su funcionalidad
     private interface ProfileQuery {
         String[] PROJECTION = {
                 ContactsContract.CommonDataKinds.Email.ADDRESS,
@@ -317,7 +314,7 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
-     * Es una clase embebida!
+     * Es una clase embebida! esto CREO que deberia ser modificado ya que la base de Datos hace una parte de su funcionalidad (chequeo de datos)
      */
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 

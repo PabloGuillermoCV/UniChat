@@ -95,7 +95,21 @@ public class FragmentoRegistro extends Fragment {
                 String aux1 = Nombre.getText().toString();
                 String aux2 = Contra.getText().toString();
                 //delego la verificación y registro en el método especifico
-                completarRegistro(aux1,aux2);
+                if(aux1 != "" && aux2 != "")
+                    completarRegistro(aux1,aux2);
+                //si alguno de lso campos esta vacio, tiro un error y pido que la aplicación concentre la Vista sobre el campo en error
+                else{
+                    if(aux1 == "") {
+                        Nombre.setError("Campo vacio!");
+                        Nombre.requestFocus();
+                    }
+                    else{
+                        Contra.setError("Campo Vacio!");
+                        Contra.requestFocus();
+                    }
+
+
+                }
             }
 
             }
