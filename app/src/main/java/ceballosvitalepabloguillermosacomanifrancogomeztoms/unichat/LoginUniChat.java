@@ -3,6 +3,8 @@ package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -92,6 +94,19 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        //Esta seccion se encarga de llamar al framento para registrarse
+        Button register_Button = (Button) findViewById (R.id.register_button);
+        register_Button.setOnClickListener (new OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                FragmentoRegistro FR = new FragmentoRegistro ();
+                //fragmentTransaction.add (R.id.login_form, FR);
+                fragmentTransaction.commit ();
+            }
+        });
     }
 
     private void populateAutoComplete() {
