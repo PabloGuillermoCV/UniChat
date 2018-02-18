@@ -86,8 +86,8 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
-    <string name="Materia1">Requerimientos de Sistemas</string>
-    <string name="Materia2">Elementos de Álgebra y de Geometria</string>
+    <string name="Materia01">Requerimientos de Sistemas</string>
+    <string name="Materia02">Elementos de Álgebra y de Geometria</string>
     <string name="TextInput">Escribe Algo!</string>
     <string name="Imagen">Descripcion</string>
 
@@ -96,4 +96,15 @@
     <string name="register">Register</string>
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
+    <string name="Close">Cerrar</string>
+    <string name="Test">Prueba</string>
+    <string name="Materia03">Estructuras De Datos</string>
+    <string name="Materia04">Organización De Computadoras</string>
+    <string name="Materia05">Lenguajes Formales Y Autómatas</string>
+    <string name="Materia06">Análisis Matemático I</string>
+    <string name="Materia07">Análisis Matemático II</string>
+    <string name="Materia08">Física I</string>
+    <string name="Materia09">Física II IS</string>
+    <string name="Materia11">Varios</string>
+    <string name="Materia10">Química IS</string>
 </resources>

@@ -2,45 +2,111 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint_layout_top"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.SalasChat">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
+    <ScrollView
+        android:id="@+id/scroll_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/Materia1"
+        <LinearLayout
+            android:id="@+id/button_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Materia1" />
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/Materia2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Materia2" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/materia_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia01" />
+
+            <Button
+                android:id="@+id/materia_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia02" />
+
+            <Button
+                android:id="@+id/materia_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia03" />
+
+            <Button
+                android:id="@+id/materia_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia04" />
+
+            <Button
+                android:id="@+id/materia_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia05" />
+
+            <Button
+                android:id="@+id/materia_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia06" />
+
+            <Button
+                android:id="@+id/materia_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia07" />
+
+            <Button
+                android:id="@+id/materia_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia08" />
+
+            <Button
+                android:id="@+id/materia_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia09" />
+
+            <Button
+                android:id="@+id/materia_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia10" />
+
+            <Button
+                android:id="@+id/materia_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Materia11" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:contentDescription="@string/Imagen"
         android:onClick="irPreferencias"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/constraint_layout_top"
+        app:layout_constraintEnd_toEndOf="@+id/constraint_layout_top"
         app:srcCompat="@android:drawable/ic_menu_preferences" />
+
 </android.support.constraint.ConstraintLayout>
