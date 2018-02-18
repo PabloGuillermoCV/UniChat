@@ -9,8 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupWindow;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.ElementosBaseDeDatos.BaseDeDatos;
+import ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.ElementosBaseDeDatos.Usuario;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.widget.RelativeLayout.*;
 
 
@@ -73,7 +79,7 @@ public class FragmentoRegistro extends Fragment {
         View toReturn =  inflater.inflate(R.layout.fragment_registro, container, false);
         RelativeLayout.LayoutParams parametros = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.MATCH_PARENT);
-        //le añado al Fragment una regla: debe posicionarse por debajo del botón de Registro
+        //le añado al Fragment una regla: debe posicionarse por debajo del botón de Registro de la activiadad de Login
         parametros.addRule(RelativeLayout.BELOW,R.id.register_button);
         //aplico los cambios al layout del Fragment
         toReturn.setLayoutParams(parametros);
@@ -98,7 +104,7 @@ public class FragmentoRegistro extends Fragment {
                 if(aux1 != "" && aux2 != "")
                     completarRegistro(aux1,aux2);
                 //si alguno de lso campos esta vacio, tiro un error y pido que la aplicación concentre la Vista sobre el campo en error
-                else{
+                else{ //acá podria meter un mini Strategy para determinar QUE campo esta vacio,esto falla si AMBOS campos estan vacios
                     if(aux1 == "") {
                         Nombre.setError("Campo vacio!");
                         Nombre.requestFocus();
@@ -132,11 +138,44 @@ public class FragmentoRegistro extends Fragment {
      * agrega los datos a la Base como un nuevo usuario
      */
     public void completarRegistro(String Nom, String Con){
-        boolean success = false;
-        //verificar supuestos, si se comprueban, agregar datos a Base de Datos
-        //y poner success en true
-        if(!success){
-            //Decirle al usuario que ocurrió un error
+        Usuario in = null;
+        //verificar supuestos, si se comprueban, agregar el nuevo usuario a la Base de Datos
+        BaseDeDatos aux = BaseDeDatos.getInstancia(getContext());
+        if(aux.usuarioDao().findByName(Nom) == null){
+            if(aux.usuarioDao().contraUnica(Con)){
+                //inserto al nuevo usuario en la base de datos
+                in = new Usuario(Nom,Con);
+                aux.usuarioDao().insertUser(in);
+            }
+            else{
+                //la contraseña ya existe
+                Contra.setError("Contraseña ya existente!");
+                Contra.requestFocus();
+            }
+        }
+        else{
+            //el nombre ya existe
+            Nombre.setError("Nombre de usuario ya existente!");
+            Nombre.requestFocus();
+        }
+
+
+        if(in == null){
+            //Decirle al usuario que ocurrió un error, lo haré a través de un PopUp
+            //creo un Layout "inflado" que contendrá la ventana de error (Estoy creando un Fragment  al vuelo basicamente)
+            LayoutInflater error = (LayoutInflater)getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popUp =  error.inflate(R.layout.popup, null);
+            final PopupWindow ventana = new PopupWindow(popUp, RadioGroup.LayoutParams.WRAP_CONTENT,
+                    RadioGroup.LayoutParams.WRAP_CONTENT);
+            Button close = (Button)popUp.findViewById(R.id.id_cerrar);
+            close.setOnClickListener(new Button.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    ventana.dismiss(); //le digo al popup que se vaya al presionar su botón de cerrado
+                }});
+
+
         }
         else
             //si salió bien, elimino el Fragment ya que no lo necesito más

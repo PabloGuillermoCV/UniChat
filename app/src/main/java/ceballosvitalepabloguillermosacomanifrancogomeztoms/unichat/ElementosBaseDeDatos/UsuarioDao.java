@@ -20,10 +20,28 @@ public interface UsuarioDao {
     @Query("SELECT * FROM user")
     List<Usuario> getAll();
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :Nombre_US AND " //dudo de esto porque NO explota por ningun lado
-            + "last_name LIKE :Contrasenia LIMIT 1")
 
+
+    @Query("SELECT * FROM user WHERE first_name LIKE :NombreUS")
+    /**
+     * método que busca si existe un usuario con el mismo nombre en la base de datos
+     * en caso afirmativo, devuelve el Usuario ligado a ese nombre
+     * @param NombreUS nombre del usuario a buscar
+     * @return el Usuario ligado al nombre o Null si no existia usuario con ese nombre
+     */
     Usuario findByName(String NombreUS);
+
+    @Query("SELECT * FROM user where  last_name LIKE :contraseniaUS ")
+    /**
+     * metodo que determina si existe una contraseña idéntica a la pasada por parámetro
+     * @param contra contraseña a buscar
+     * @return valor de verdad de si la contraseña existe dentro de la base de datos para algún usuario
+     */
+    boolean contraUnica(String contra);
+
+
+    @Insert
+    void insertUser(Usuario user);
 
     @Insert //Consulta para insertar usuarios a la Base de Datos
     void insertAll(Usuario... users);

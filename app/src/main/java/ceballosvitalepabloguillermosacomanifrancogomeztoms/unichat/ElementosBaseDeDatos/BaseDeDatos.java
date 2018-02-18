@@ -6,9 +6,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 
-@Database(entities = {Usuario.class}, version = 1) //codigo especial para avisar
-                                                   //que esto hará referencia a una base de datos Room
-
+@Database(entities = {Usuario.class}, version = 1) //codigo especial para avisar que es una Base de Datos Room
 public abstract class BaseDeDatos extends RoomDatabase {
 
     private static BaseDeDatos Instancia;
@@ -28,8 +26,8 @@ public abstract class BaseDeDatos extends RoomDatabase {
         return Instancia;
     }
 
-    public static void destroyInstance(){
-        Instancia = null;
+    public void destroyInstance(){
+        Instancia= null;
     }
 
     //AppDatabase db = Room.databaseBuilder(getApplicationContext(),

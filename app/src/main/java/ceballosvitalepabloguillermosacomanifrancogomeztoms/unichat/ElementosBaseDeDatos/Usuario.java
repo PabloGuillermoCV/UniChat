@@ -25,6 +25,16 @@ public class Usuario {
     @ColumnInfo(name = "Contrasenia") //segunda columna, Contraseña del Usuario
     private String contraseniaUS;
 
+    /**
+     * Constructor del objeto Usuario
+     * @param nom nombre del nuevo usuario
+     * @param con contraseña ligada al nuevo usuario
+     */
+    public Usuario(String nom, String con){
+        NombreUS = nom;
+        contraseniaUS = con;
+    }
+
     //Setters y Getters necesarios para el correcto funcionamiento del Room
     public void setNombre(String Nom){
         NombreUS = Nom;

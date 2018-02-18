@@ -6,6 +6,8 @@ import android.annotation.TargetApi;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
@@ -46,11 +48,12 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-    private BaseDeDatos miBDD; //instancia única de la Base de Datos por Singleton, aunque me tira error al querer llamar a "getInstancia(Context)"
+    private BaseDeDatos InstanciaBDD = null; //instancia única de la Base de Datos por Singleton, aunque me tira error al querer llamar a "getInstancia(Context)"
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system. Esto seria remplazado por la Base De Datos Room!
      */
+
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
     };
@@ -64,6 +67,7 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+
 
     @Override
     //OnCreate == constructor de actividad
@@ -109,6 +113,8 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
                 fragmentTransaction.commit ();
             }
         });
+        //obtengo una instancia de la Base de Datos Room a traves de su método Singleton
+        InstanciaBDD = BaseDeDatos.getInstancia(getApplicationContext());
     }
 
 
