@@ -84,9 +84,9 @@ public class FragmentoRegistro extends Fragment {
         //aplico los cambios al layout del Fragment
         toReturn.setLayoutParams(parametros);
         confirm = (Button)toReturn.findViewById(R.id.confirm_registration_button);
-        cancel = (Button)toReturn.findViewById(R.id.cancel_button);
-        Nombre = (EditText)toReturn.findViewById(R.id.Nombre);
-        Contra = (EditText)toReturn.findViewById(R.id.password);
+        cancel = (Button)toReturn.findViewById(R.id.cancel_registration_button);
+        Nombre = (EditText)toReturn.findViewById(R.id.nombre_register);
+        Contra = (EditText)toReturn.findViewById(R.id.password_register);
 
         agregarOyentes();
 
