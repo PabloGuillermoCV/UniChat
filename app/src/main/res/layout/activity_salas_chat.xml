@@ -33,66 +33,77 @@
                 android:id="@+id/materia_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia01" />
 
             <Button
                 android:id="@+id/materia_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia02" />
 
             <Button
                 android:id="@+id/materia_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia03" />
 
             <Button
                 android:id="@+id/materia_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia04" />
 
             <Button
                 android:id="@+id/materia_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia05" />
 
             <Button
                 android:id="@+id/materia_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia06" />
 
             <Button
                 android:id="@+id/materia_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia07" />
 
             <Button
                 android:id="@+id/materia_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia08" />
 
             <Button
                 android:id="@+id/materia_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia09" />
 
             <Button
                 android:id="@+id/materia_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia10" />
 
             <Button
                 android:id="@+id/materia_11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="irSalaX"
                 android:text="@string/Materia11" />
 
         </LinearLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UniChat</string>
+    <string name="app_name">StudiChatter</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -91,7 +91,6 @@
     <string name="TextInput">Escribe Algo!</string>
     <string name="Imagen">Descripcion</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="register">Register</string>
     <string name="cancel">Cancel</string>
@@ -107,4 +106,12 @@
     <string name="Materia09">Física II IS</string>
     <string name="Materia11">Varios</string>
     <string name="Materia10">Química IS</string>
+    <string name="Developed_by">Desarrolladores:</string>
+    <string name="D1">-Ceballos Vitale Pablo Guillermo</string>
+    <string name="D2">-Sacomani Franco</string>
+    <string name="D3">-Gómez Tomás Alejandro</string>
+    <string name="Log_out">Log Out</string>
+    <string name="About">About StudiChatter</string>
+    <string name="Go_back">Atras</string>
+    <string name="Copyright">© 2018 Universidad Nacional Del Sur</string>
 </resources>

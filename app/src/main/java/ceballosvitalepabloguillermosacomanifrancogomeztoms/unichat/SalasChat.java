@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-
 public class SalasChat extends AppCompatActivity {
 
     @Override
@@ -28,10 +27,14 @@ public class SalasChat extends AppCompatActivity {
      * método que se encargaria de entrar a la sala de chat correspondiente con lo que eligió el usuario
      * @param view Contexto actual de la App
      */
-    public void irSalaX(View view){
-        //Intent Sala = new Intent (this, ChatEscrito.class);
-        //startActivity(Sala);
-        //agrego esto comentado para probar lo del Intent. Se deberia llamar a este metodo una vez que se seleccione la sala?
+    public void irSalaX (View view) {
+        int buttonID = view.getId ();
+        if (buttonID == 1) {
+            Intent Sala = new Intent (this, ChatEscrito.class);
+            startActivity(Sala);
+            // TODO
+            //Esto es por poner un ejemplo de la seleccion de salas (quiza un case seria mejor).
+            //Tambien se podria utilizar el string del boton
+        }
     }
-
 }

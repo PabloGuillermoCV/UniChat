@@ -23,9 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SalasChat" />
-        <activity android:name=".Preferencias" />
-        <activity android:name=".ChatEscrito"></activity>
+        <activity android:name=".SalasChat"
+                  android:label="Lista De Salas Disponibles">
+        </activity>
+        <activity android:name=".Preferencias"
+                  android:label="Settings">
+        </activity>
+        <activity android:name=".ChatEscrito"
+                  android:label="Chat">
+        </activity>
     </application>
 
 </manifest>
