@@ -35,6 +35,11 @@ public class SalasChat extends AppCompatActivity {
             // TODO
             //Esto es por poner un ejemplo de la seleccion de salas (quiza un case seria mejor).
             //Tambien se podria utilizar el string del boton
+            //se me ocurre usar un Strategy con el String del nombre de la sala a la cual ir
+            //tema es, habria que ver como se hace para contactar al server y pedir por la sala en particular
+            //ya que tendriamos distintas salas dentro del server que estarian constantemente guardando los mensajes enviados
+
         }
     }
+
 }
