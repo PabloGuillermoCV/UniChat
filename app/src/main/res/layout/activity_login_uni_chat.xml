@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/gradient"
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.LoginUniChat">
 
     <!-- Login progress -->
@@ -40,8 +41,8 @@
                     android:id="@+id/nombre_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_email"
-                    android:inputType="textEmailAddress"
+                    android:hint="Nombre de Usuario"
+                    android:drawableLeft="@drawable/ic_action_user"
                     android:maxLines="1"
                     android:singleLine="true" />
 
@@ -56,7 +57,8 @@
                     android:id="@+id/password_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
+                    android:hint="Contraseña"
+                    android:drawableLeft="@drawable/ic_action_pass"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -68,20 +70,22 @@
 
             <Button
                 android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@android:color/holo_red_light"
                 android:onClick="onLogin"
                 android:text="@string/action_sign_in_short"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/register_button"
-                style="?android:textAppearanceSmall"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="@android:color/holo_blue_bright"
                 android:text="@string/register"
                 android:textStyle="bold" />
 
