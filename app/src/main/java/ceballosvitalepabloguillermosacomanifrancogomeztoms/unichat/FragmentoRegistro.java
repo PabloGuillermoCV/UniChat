@@ -101,7 +101,7 @@ public class FragmentoRegistro extends Fragment {
                 String aux1 = Nombre.getText().toString();
                 String aux2 = Contra.getText().toString();
                 //delego la verificación y registro en el método especifico
-                if(aux1 != "" && aux2 != "")
+                if(aux1  != "" && aux2 != "")
                     completarRegistro(aux1,aux2);
                 //si alguno de lso campos esta vacio, tiro un error y pido que la aplicación concentre la Vista sobre el campo en error
                 else{ //acá podria meter un mini Strategy para determinar QUE campo esta vacio,esto falla si AMBOS campos estan vacios
