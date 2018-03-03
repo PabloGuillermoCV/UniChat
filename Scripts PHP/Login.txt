@@ -1,9 +1,12 @@
 <?php
 require "Conexion.php";
-$NombreUs = "";
-$contrasenaUs = "";
-$consulta_Login = "select * from Usuarios where username like '$NombreUs' and password '$contrasenaUs';";
+$NombreUs = $_POST["NombreUs"];
+$contrasenaUs = $_POST["contrasenaUs"];
+$consulta_Login = "SELECT * FROM 'tabla1' WHERE 'usuario' LIKE \'pepe\' ";
 $resultado = mysqli_query($conectar,$consulta_Login);
-
-
+if(mysqli_num_rows($result) > 0){
+	echo "true";
+}
+else
+	echo "false";
 ?>
