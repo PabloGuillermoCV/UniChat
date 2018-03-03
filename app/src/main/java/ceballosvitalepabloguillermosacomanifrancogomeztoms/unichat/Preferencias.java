@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,8 @@ public class Preferencias extends AppCompatActivity {
     private Button logOut;
     private Button Back;
     private CheckBox[] Opciones; //arreglo de checkBox para controlar las preferencias del usuario y poder guardar sus estados más tarde
+    private SharedPreferences settings = getSharedPreferences("Configuracion",0); //para obtener la configuración
+    private SharedPreferences.Editor editor = settings.edit(); //para editar configuraciones
 
 
     @Override
@@ -24,6 +27,8 @@ public class Preferencias extends AppCompatActivity {
         setContentView(R.layout.activity_preferencias);
         logOut = findViewById(R.id.log_out_button);
         Back = findViewById(R.id.go_back_button);
+
+        //EJEMPLO editor.putBoolean("NombreDeLoModificado",<ValorDeVerdad>);
 
     }
 
