@@ -41,10 +41,12 @@
                     android:id="@+id/nombre_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre de Usuario"
                     android:drawableLeft="@drawable/ic_action_user"
+                    android:drawableStart="@drawable/ic_action_user"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="@string/User_Text"
+                    tools:text="Nombre De Usuario" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -57,14 +59,16 @@
                     android:id="@+id/password_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Contraseña"
                     android:drawableLeft="@drawable/ic_action_pass"
+                    android:drawableStart="@drawable/ic_action_pass"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="@string/Password_Text"
+                    tools:text="Contraseña" />
 
             </android.support.design.widget.TextInputLayout>
 

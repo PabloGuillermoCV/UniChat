@@ -29,7 +29,6 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
 
     public void agregarMensaje(ChatMessage msg){
         historial.add(msg);
-        super.add(msg); //Esto me aprece raro... sigo sin saber a QUE hace super, si es que esto es un super en si
     }
 
     public int size(){
