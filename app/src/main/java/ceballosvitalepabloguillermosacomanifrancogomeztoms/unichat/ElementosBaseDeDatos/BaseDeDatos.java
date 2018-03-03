@@ -6,7 +6,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
 
-@Database(entities = {Usuario.class}, version = 1) //codigo especial para avisar que es una Base de Datos Room
+@Database(entities = {Usuario.class}, version = 1, exportSchema = false) //codigo especial para avisar que es una Base de Datos Room
 public abstract class BaseDeDatos extends RoomDatabase {
 
     private static BaseDeDatos Instancia;

@@ -14,15 +14,16 @@ import java.util.List;
 /**
  * Interfaz especial tipo DAO (Data Access Object)  que contendrá las consultas
  * que se le podrán hacer a la Base de Datos
+ * el Nombre de la tabla DEBE SER "Usuario" ya que sino tira error en ejecución
  */
 public interface UsuarioDao {
 
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM Usuario")
     List<Usuario> getAll();
 
 
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :NombreUS")
+    @Query("SELECT * FROM Usuario WHERE Usuario.Nombre_US = (:NombreUS)")
     /**
      * método que busca si existe un usuario con el mismo nombre en la base de datos
      * en caso afirmativo, devuelve el Usuario ligado a ese nombre
@@ -31,13 +32,13 @@ public interface UsuarioDao {
      */
     Usuario findByName(String NombreUS);
 
-    @Query("SELECT * FROM user where  last_name LIKE :contraseniaUS ")
+    @Query("SELECT * FROM Usuario WHERE Usuario.Contrasenia = (:contraseniaUS) ")
     /**
      * metodo que determina si existe una contraseña idéntica a la pasada por parámetro
      * @param contra contraseña a buscar
      * @return valor de verdad de si la contraseña existe dentro de la base de datos para algún usuario
      */
-    boolean contraUnica(String contra);
+    boolean contraUnica(String contraseniaUS);
 
 
     @Insert
