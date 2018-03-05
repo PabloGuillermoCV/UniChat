@@ -126,6 +126,11 @@ public class FragmentoRegistro extends Fragment {
             @Override
             public void onClick(View view){
                 //eliminar el fragment de alguna forma
+                try {
+                    this.finalize(); //es una llamada explicita, tira warning, pero no error
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
             }
 
         });
@@ -180,8 +185,6 @@ public class FragmentoRegistro extends Fragment {
         else
             //si salió bien, elimino el Fragment ya que no lo necesito más
             getFragmentManager().beginTransaction().remove(this).commit();
-
-
     }
 
 

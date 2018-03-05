@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.ElementosBaseDeDatos.BaseDeDatos;
+import ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.ElementosBaseDeDatos.Usuario;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -49,14 +50,7 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
      */
     private static final int REQUEST_READ_CONTACTS = 0;
     private BaseDeDatos InstanciaBDD = null; //instancia única de la Base de Datos por Singleton, aunque me tira error al querer llamar a "getInstancia(Context)"
-    /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system. Esto seria remplazado por la Base De Datos Room!
-     */
 
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -213,7 +207,7 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
             // perform the user login attempt.
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            mAuthTask.execute((String) null);
         }
     }
 
@@ -320,21 +314,23 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
-     * Es una clase embebida! esto CREO que deberia ser modificado ya que la base de Datos hace una parte de su funcionalidad (chequeo de datos)
+     * Es una clase embebida!
+     *esta clase obtiene dos Strings y devuelve un booleano
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserLoginTask extends AsyncTask<String, String, Boolean> {
 
-        private final String mEmail;
+        private final String NomUS;
         private final String mPassword;
         //Constructor
-        UserLoginTask(String email, String password) {
-            mEmail = email;
+        UserLoginTask(String Nom, String password) {
+            NomUS = Nom;
             mPassword = password;
         }
 
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected Boolean doInBackground(String... params) {
             // TODO: attempt authentication against a network service.
+
 
             try {
                 // Simulate network access.
@@ -343,16 +339,22 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+            //Busco si el usuario existe dentro de la base de datos usando el Room
+            Usuario aux = InstanciaBDD.usuarioDao().findByName(NomUS);
+            if(aux != null) { //el sistema encontró un usuario, falta corroborar la clave
+                if (aux.getContraseniaUS().equals(mPassword))
+                    return true; //login exitoso, el cambio se hace en onPostExecute!
+                else {
+                    //contraseña incorrecta, el error se da en onPostExecute!
+                    return false;
                 }
             }
+            else {
+                mEmailView.setError("Nombre de Usuario Incorrecto!");
+                mEmailView.requestFocus();
+                return false; //horrible, pero hasta que vea como detectar bien como ver el campo en error lo hago asi
+            }
 
-            // TODO: register the new account here.
-            return true;
         }
 
         @Override
