@@ -1,10 +1,6 @@
 package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
 /**
- * Created by Lark Digital on 24/2/2018.
- */
-
-/**
  * Clase mensaje de Chat que guardará los mensajes enviados apra ser usados por el adaptador
  */
 class ChatMessage {

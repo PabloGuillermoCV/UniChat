@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
 
     private TextView viewChat;
     private List<ChatMessage> historial;
-    private LinearLayout layout;
+    private RelativeLayout layout;
 
     public ChatArrayAdapter(Context context, int textViewResourceId){
         super(context,textViewResourceId);
@@ -48,9 +49,9 @@ class ChatArrayAdapter extends ArrayAdapter<ChatMessage> {
 
         }
 
-        layout = (LinearLayout)v.findViewById(R.id.Message1);
+        layout = (RelativeLayout)v.findViewById(R.id.relative_layout_top);
         ChatMessage messageobj = getItem(pos);
-        viewChat =(TextView)v.findViewById(R.id.SingleMessage);
+        viewChat =(TextView)v.findViewById(R.id.text_message);
         viewChat.setText(messageobj.getMensaje());
         viewChat.setBackgroundResource(messageobj.getLado()?R.drawable.bubble_a :R.drawable.bubble_b); //consulta ternaria! acá dibujo el mensaje con la burbuja correspondiente
         layout.setGravity(messageobj.getLado()?Gravity.LEFT:Gravity.RIGHT);

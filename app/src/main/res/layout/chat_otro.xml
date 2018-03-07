@@ -9,8 +9,8 @@
         android:id="@+id/text_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/Sent_Text"
-        android:src="@drawable/bubble_b" />
+        android:contentDescription="@string/Received_Text"
+        android:src="@drawable/bubble_a" />
 
     <TextView
         android:id="@+id/text_message"

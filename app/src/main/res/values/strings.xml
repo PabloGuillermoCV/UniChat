@@ -119,4 +119,6 @@
     <string name="User_Text">Nombre De Usuario</string>
     <string name="Write">Escribe Algo!</string>
     <string name="Send">Enviar</string>
+    <string name="Sent_Text">Text Message Of The Sender</string>
+    <string name="Received_Text">Text Message Received</string>
 </resources>

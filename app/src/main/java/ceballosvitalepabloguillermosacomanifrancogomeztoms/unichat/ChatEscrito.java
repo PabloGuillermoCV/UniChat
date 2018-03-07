@@ -25,9 +25,9 @@ public class ChatEscrito extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         enviar = (Button) findViewById(R.id.send_message_button);
-        adjunto =(Button) findViewById(R.id.floatingActionButton);
-        vistaChat = (ListView) findViewById(R.id.chat);
-        textoAEnviar = (EditText) findViewById((R.id.chat_Message));
+        adjunto =(Button) findViewById(R.id.add_image_button);
+        vistaChat = (ListView) findViewById(R.id.chat_list_view);
+        textoAEnviar = (EditText) findViewById((R.id.chat_message));
         lado = false;
         Intent i = getIntent();
         adp = new ChatArrayAdapter(getApplicationContext(), R.layout.chat);
