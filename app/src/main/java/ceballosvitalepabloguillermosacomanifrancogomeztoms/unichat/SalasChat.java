@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
-public class SalasChat extends AppCompatActivity {
+public class SalasChat extends ActividadBase {
+
+    private Button[] Botones; //Botones de la actividad
+    private BotonSala[] BotonesList; //Listeners para cada botón, luego seteo cada botón con un For (ahora lo hice a mano porque hice una sola clase del árbol de herencia)
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salas_chat);
+        Botones = new Button[3];
+        BotonesList = new BotonSala[3];
+        BotonesList[0] = new BotonAyG(getApplicationContext());
+        Botones[0].findViewById(R.id.materia_2);
+        Botones[0].setOnClickListener(BotonesList[0]); //vinculo el botón con su correspondiente OnCLickListener
     }
 
     /**
@@ -23,23 +32,5 @@ public class SalasChat extends AppCompatActivity {
         startActivity(Pref); //creo la nueva actividad y la inicio, SalasChat queda atras en segundo plano, esta NO la destruyo
     }
 
-    /**
-     * método que se encargaria de entrar a la sala de chat correspondiente con lo que eligió el usuario
-     * @param view Contexto actual de la App
-     */
-    public void irSalaX (View view) {
-        int buttonID = view.getId ();
-        if (buttonID == 1) {
-            Intent Sala = new Intent (this, ChatEscrito.class);
-            startActivity(Sala);
-            // TODO
-            //Esto es por poner un ejemplo de la seleccion de salas (quiza un case seria mejor).
-            //Tambien se podria utilizar el string del boton
-            //se me ocurre usar un Strategy con el String del nombre de la sala a la cual ir
-            //tema es, habria que ver como se hace para contactar al server y pedir por la sala en particular
-            //ya que tendriamos distintas salas dentro del server que estarian constantemente guardando los mensajes enviados
-
-        }
-    }
-
 }
+

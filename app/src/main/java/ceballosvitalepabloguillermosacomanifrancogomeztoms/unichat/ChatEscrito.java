@@ -13,7 +13,7 @@ import android.widget.ListView;
 import java.util.List;
 
 
-public class ChatEscrito extends AppCompatActivity {
+public class ChatEscrito extends ActividadBase {
 
     private ChatArrayAdapter adp;
     private ListView vistaChat;
@@ -22,8 +22,12 @@ public class ChatEscrito extends AppCompatActivity {
     private boolean lado;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            String value = extras.getString("NOMBRE"); //obtengo el nombre de la sala de chat a buscar su historial
+        }
         enviar = (Button) findViewById(R.id.send_message_button);
         adjunto =(Button) findViewById(R.id.add_image_button);
         vistaChat = (ListView) findViewById(R.id.chat_list_view);

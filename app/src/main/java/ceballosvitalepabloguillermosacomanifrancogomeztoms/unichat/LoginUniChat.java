@@ -3,6 +3,7 @@ package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -43,13 +44,14 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<Cursor> {
+public class LoginUniChat extends ActividadBase implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
     private BaseDeDatos InstanciaBDD = null; //instancia única de la Base de Datos por Singleton, aunque me tira error al querer llamar a "getInstancia(Context)"
+    protected Study App;
 
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -65,7 +67,7 @@ public class LoginUniChat extends AppCompatActivity implements LoaderCallbacks<C
 
     @Override
     //OnCreate == constructor de actividad
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_uni_chat);
         // Set up the login form.

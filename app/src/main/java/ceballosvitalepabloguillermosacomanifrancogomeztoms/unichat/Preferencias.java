@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-public class Preferencias extends AppCompatActivity {
+public class Preferencias extends ActividadBase{
 
     //tenemos que tener como datos lo referido a la configuración que pueda tocar el usuario
     private Button logOut;
@@ -22,7 +22,7 @@ public class Preferencias extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferencias);
         logOut = findViewById(R.id.log_out_button);
