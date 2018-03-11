@@ -33,6 +33,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -319,10 +330,10 @@ public class LoginUniChat extends ActividadBase implements LoaderCallbacks<Curso
      * Es una clase embebida!
      *esta clase obtiene dos Strings y devuelve un booleano
      */
-    public class UserLoginTask extends AsyncTask<String, String, Boolean> {
+    public class UserLoginTask extends AsyncTask<String, Void, String> {
 
-        private final String NomUS;
-        private final String mPassword;
+        private String NomUS;
+        private String mPassword;
         //Constructor
         UserLoginTask(String Nom, String password) {
             NomUS = Nom;
@@ -330,42 +341,55 @@ public class LoginUniChat extends ActividadBase implements LoaderCallbacks<Curso
         }
 
         @Override
-        protected Boolean doInBackground(String... params) {
-            // TODO: attempt authentication against a network service.
+        protected String doInBackground(String... params) {
+            // TODO: attempt authentication against a network service
 
-
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
-
-            //Busco si el usuario existe dentro de la base de datos usando el Room
-            Usuario aux = InstanciaBDD.usuarioDao().findByName(NomUS);
-            if(aux != null) { //el sistema encontró un usuario, falta corroborar la clave
-                if (aux.getContraseniaUS().equals(mPassword))
-                    return true; //login exitoso, el cambio se hace en onPostExecute!
-                else {
-                    //contraseña incorrecta, el error se da en onPostExecute!
-                    return false;
+            String type = params[0];
+            String login_url = "http://192.168.0.182/login.php";
+            if(type.equals("login")) {
+                try {
+                    NomUS = params[1];
+                    mPassword = params[2];
+                    URL url = new URL(login_url);
+                    HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                    httpURLConnection.setRequestMethod("POST");
+                    httpURLConnection.setDoOutput(true);
+                    httpURLConnection.setDoInput(true);
+                    OutputStream outputStream = httpURLConnection.getOutputStream();
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                    String post_data = URLEncoder.encode("user_name","UTF-8")+"="+URLEncoder.encode(NomUS,"UTF-8")+"&"
+                            +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(mPassword,"UTF-8");
+                    bufferedWriter.write(post_data);
+                    bufferedWriter.flush();
+                    bufferedWriter.close();
+                    outputStream.close();
+                    InputStream inputStream = httpURLConnection.getInputStream();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
+                    String result="";
+                    String line="";
+                    while((line = bufferedReader.readLine())!= null) {
+                        result += line;
+                    }
+                    bufferedReader.close();
+                    inputStream.close();
+                    httpURLConnection.disconnect();
+                    return result;
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
-            else {
-                mEmailView.setError("Nombre de Usuario Incorrecto!");
-                mEmailView.requestFocus();
-                return false; //horrible, pero hasta que vea como detectar bien como ver el campo en error lo hago asi
-            }
-
+            return null;
         }
 
         @Override
         //método que hace algo luego de ejecutada una acción
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(final String success) {
             mAuthTask = null;
             showProgress(false);
 
-            if (success) {
+            if (success == "TRUE") {
                 //creo la Actividad de salas y la mando al frente por el orden del Stack
                 Intent nuevaActi;
                 nuevaActi = new Intent(LoginUniChat.this, SalasChat.class); //el error estaba en el this, posiblemente al ser una clase embebida generaba el error
