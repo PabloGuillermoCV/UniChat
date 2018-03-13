@@ -104,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/Imagen"
-        android:onClick="irPreferencias"
+        android:onClick="irPerfil"
         app:layout_constraintBottom_toBottomOf="@+id/constraint_layout_top"
         app:layout_constraintEnd_toEndOf="@+id/constraint_layout_top"
         app:srcCompat="@android:drawable/ic_menu_preferences" />

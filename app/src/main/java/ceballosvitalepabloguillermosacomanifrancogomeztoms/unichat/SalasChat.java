@@ -5,6 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SalasChat extends ActividadBase {
 
@@ -24,13 +29,15 @@ public class SalasChat extends ActividadBase {
 
     /**
      * método que se ejecuta cuando se toca el botón de configuración, esto cambia actividades
-     * dejando en segundo plano las salas de chat y yendo a la actividad de preferencias
+     * dejando en segundo plano las salas de chat y yendo a la actividad de Perfil del Usuario
      * @param view Vista actual (Contexto actual de la App)
      */
-    public void irPreferencias(View view){
-        Intent Pref = new Intent(this, Preferencias.class);
+    public void irPerfil(View view){
+        Intent Pref = new Intent(this, Perfil.class);
         startActivity(Pref); //creo la nueva actividad y la inicio, SalasChat queda atras en segundo plano, esta NO la destruyo
     }
+
+
 
 }
 

@@ -1,25 +1,49 @@
 package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
+import java.util.Date;
+
 /**
- * Clase mensaje de Chat que guardará los mensajes enviados apra ser usados por el adaptador
+ * Clase mensaje de Chat que guardará los mensajes enviados para ser usados por el adaptador
  */
 class ChatMessage {
+    private String messageText;
+    private String messageUser;
+    private long messageTime;
 
-    private boolean ladoIzquierdo;
-    private String mensaje;
+    public ChatMessage(String messageText, String messageUser) {
+        this.messageText = messageText;
+        this.messageUser = messageUser;
 
-    public ChatMessage(boolean left, String msg){
-        super(); //NO se que ha que hace super(), pero por ahora se hace así
-        ladoIzquierdo = left;
-        mensaje = msg;
+        // inicializo con la hora a la que se envió el mensaje
+        messageTime = new Date().getTime();
     }
 
-    public boolean getLado(){
-        return ladoIzquierdo;
+    public ChatMessage(){
+
     }
 
-    public String getMensaje(){
-        return mensaje;
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
+    }
+
+    public String getMessageUser() {
+        return messageUser;
+    }
+
+    public void setMessageUser(String messageUser) {
+        this.messageUser = messageUser;
+    }
+
+    public long getMessageTime() {
+        return messageTime;
+    }
+
+    public void setMessageTime(long messageTime) {
+        this.messageTime = messageTime;
     }
 
 }
