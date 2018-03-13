@@ -124,4 +124,15 @@
     <string name="registro">registro</string>
     <string name="llevame_a_las_salas_de_chat">Llevame a las salas de Chat!</string>
     <string name="escribe_algo">Escribe Algo!</string>
+    <string name="user_login">User Login</string>
+    <string name="enter_email">Enter E-Mail</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="new_account">Not have an account? Sign up</string>
+    <string name="ingrese_email">Ingrese E-Mail</string>
+    <string name="ingrese_contraseña">Ingrese Contraseña</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="ya_registrado">Ya estas registrado? Haz Login aquí!</string>
+    <string name="new_registro">Registro</string>
+    <string name="logout">Logout</string>
+    <string name="sign_in_new">Sign In</string>
 </resources>
