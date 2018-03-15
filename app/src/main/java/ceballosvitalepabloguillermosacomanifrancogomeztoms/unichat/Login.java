@@ -38,11 +38,13 @@ class Login extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        //obtengo un objeto tipo FIrebaseAuth
+        //obtengo una instancia de un objeto tipo FirebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Si getCurrentUser() me devuelve algo que NO es null,
         //significa que el usuario ya está logueado
+        //esto puede pasar, por ejemplo, si el usuario sale de la App al inicio
+        //del telefono y vuelve a abrir la app
         if(firebaseAuth.getCurrentUser() != null){
             //cierro esta actividad
             finish();

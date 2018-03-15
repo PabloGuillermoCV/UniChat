@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
+
 class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     //Objeto Firebase Auth
@@ -65,7 +66,9 @@ class Perfil extends AppCompatActivity implements View.OnClickListener {
             startActivity(new Intent(this, Login.class));
         }
         if(view == buttonRooms){
+            //cierro la actividad
             finish();
+            //me voy a la actividad de SalasChat
             startActivity(new Intent(this, SalasChat.class));
         }
     }
