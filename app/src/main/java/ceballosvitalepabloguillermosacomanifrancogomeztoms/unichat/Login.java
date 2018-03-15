@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-class Login extends AppCompatActivity implements View.OnClickListener{
+ public class Login extends AppCompatActivity implements View.OnClickListener{
     //defino vistas de componentes gráficas
     private Button buttonSignIn;
     private EditText editTextEmail;
