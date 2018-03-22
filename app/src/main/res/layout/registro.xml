@@ -13,9 +13,14 @@
 
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/new_registro"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <LinearLayout
         android:id="@+id/linear_layout_registro"
@@ -23,15 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/new_registro"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
         <EditText
@@ -43,12 +39,28 @@
             android:inputType="textEmailAddress" />
 
         <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="@string/ingrese_user"
+            android:inputType="textPersonName" />
+
+        <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:hint="@string/ingrese_contraseña"
             android:inputType="textPassword" />
+
+        <Spinner
+            android:id="@+id/editCareer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:spinnerMode="dropdown"
+            android:prompt="@string/career_select"/>
 
         <Button
             android:id="@+id/buttonSignup"
