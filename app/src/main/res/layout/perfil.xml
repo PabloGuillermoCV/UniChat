@@ -93,18 +93,21 @@
             android:id="@+id/buttonLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/Ira_Salas"
+            android:layout_alignLeft="@+id/Ira_Salas"
+            android:layout_alignRight="@+id/Ira_Salas"
+            android:layout_alignStart="@+id/Ira_Salas"
+            android:layout_below="@+id/Ira_Salas"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
             android:text="@string/logout" />
 
         <Button
             android:id="@+id/Ira_Salas"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/buttonLogout"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:text="@string/llevame_a_las_salas_de_chat" />
 
     </RelativeLayout>
