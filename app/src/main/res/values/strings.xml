@@ -135,17 +135,13 @@
     <string name="new_registro">Registro</string>
     <string name="logout">Logout</string>
     <string name="sign_in_new">Sign In</string>
-<<<<<<< HEAD
     <string name="instructions">prueba</string>
-=======
     <string name="ingrese_user">Ingrese Nombre De Usuario</string>
     <string name="welcome">Welcome</string>
     <string name="career_select">Seleccione Su Carrera</string>
-
     <string-array name="materias">
         <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
->>>>>>> a4bb428db72c90c7470e64468fe729af31e23467
 </resources>

@@ -10,7 +10,7 @@ import android.view.View;
 public class BotonAyG extends BotonSala {
 
     public BotonAyG(Context context) {
-        super("Elementos de Álgebra y de Geometria",context); //subo al constructor de mi padre con mi nombre correspondiente
+        super("Elementos de Álgebra y de Geometria",context); //subo al constructor de mi padre con un nombre provisiorio que será modificado más tarde
     }
 
     @Override

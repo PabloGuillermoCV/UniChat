@@ -5,6 +5,7 @@ package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
  */
 
 public interface Usuario {
+
     public String getEmail();
     public String getNombre();
     public String getCarrera();

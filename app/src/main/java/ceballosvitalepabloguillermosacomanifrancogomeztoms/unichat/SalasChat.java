@@ -20,17 +20,14 @@ import com.google.firebase.auth.FirebaseUser;
 public class SalasChat extends ActividadBase {
 
     private String[] materias;
-    private Button Botones;
     private LayoutInflater paginas;
     private ViewPager vp;
-    private BotonSala BotonesList; //Listeners para cada botón, luego seteo cada botón con un For (ahora lo hice a mano porque hice una sola clase del árbol de herencia)
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salas_chat);
-        BotonesList = new BotonAyG(getApplicationContext());
-        Botones.setOnClickListener(BotonesList); //vinculo el botón con su correspondiente OnCLickListener
         materias=getResources().getStringArray(R.array.materias);
         //get an inflater to be used to create single pages
         paginas = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -78,7 +75,7 @@ private class AdaptadorPaginas extends PagerAdapter{
     @Override
     public Object instantiateItem(ViewGroup container, int position){
         View page = paginas.inflate(R.layout.pagina, null);
-        ((Button)page.findViewById(R.id.BotonMateria)).setText(materias[position]);
+        ((Button)page.findViewById(R.id.BotonMateria)).setText(materias[position]); //seteo el texto del botón del view nuevo, esto es esencial
         //Add the page to the front of the queue
         ((ViewPager) container).addView(page, 0);
         return page;
@@ -90,7 +87,5 @@ private class AdaptadorPaginas extends PagerAdapter{
         object=null;
     }
 }
-}
-
 }
 

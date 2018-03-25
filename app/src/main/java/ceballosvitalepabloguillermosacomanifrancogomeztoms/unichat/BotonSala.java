@@ -11,7 +11,7 @@ import android.view.View;
  */
 public abstract class BotonSala implements View.OnClickListener {
 
-    protected final String Nombre;
+    protected String Nombre;
     protected Activity padre; //los botones deben conocer a que actividad pertenecen
 
     public BotonSala(String nombre,Context context) {
@@ -33,5 +33,9 @@ public abstract class BotonSala implements View.OnClickListener {
         Intent Sala = new Intent (padre, ChatEscrito.class);
         Sala.putExtra("NOMBRE",s); //antes de iniciar la actividad, le digo al Intent que guarde un extra, esto ayudará a setear el chat correspondiente
         padre.startActivity(Sala); //le digo a la actividad a la cual pertenezco que inicie el intent de actividad por mi
+    }
+
+    public void setNombre(String nom){
+        Nombre = nom;
     }
 }
