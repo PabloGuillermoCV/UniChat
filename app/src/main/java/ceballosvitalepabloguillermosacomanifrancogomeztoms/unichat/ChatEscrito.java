@@ -86,6 +86,7 @@ public class ChatEscrito extends ActividadBase {
      * Método que se encargará de mosrtar el historial de mensajes
      * @param materia determinante para saber QUÉ historial buscar
      */
+    //Ver si es iterativo++++++++++++++++++++++++++++++++++++++++
     private void mostrarMensajes(String materia){
         vistaChat = (ListView) findViewById(R.id.list_of_messages);
         //en la parte de "getReference()" del Firebase es donde deberiamos ver como decirle a Firebase que buscamos un chat en particular
