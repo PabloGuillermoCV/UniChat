@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 
-class Perfil extends AppCompatActivity implements View.OnClickListener {
+public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     //Objeto Firebase Auth
     private FirebaseAuth firebaseAuth;
@@ -71,5 +71,6 @@ class Perfil extends AppCompatActivity implements View.OnClickListener {
             //me voy a la actividad de SalasChat
             startActivity(new Intent(this, SalasChat.class));
         }
+
     }
 }

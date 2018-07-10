@@ -30,8 +30,8 @@ public abstract class BotonSala implements View.OnClickListener {
      * @param s Nombre del botón presionado, usado para enviar data extra a la sala y poder setearla correctamente con el chat correspondiente
      */
     public void irSalaX(View view, String s) {
-        Intent Sala = new Intent (padre, ChatEscrito.class);
-        Sala.putExtra("NOMBRE",s); //antes de iniciar la actividad, le digo al Intent que guarde un extra, esto ayudará a setear el chat correspondiente
+        Intent Sala = new Intent (padre, Perfil.class);
+        //Sala.putExtra("NOMBRE",s); //antes de iniciar la actividad, le digo al Intent que guarde un extra, esto ayudará a setear el chat correspondiente
         padre.startActivity(Sala); //le digo a la actividad a la cual pertenezco que inicie el intent de actividad por mi
     }
 

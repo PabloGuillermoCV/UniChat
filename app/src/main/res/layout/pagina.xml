@@ -6,9 +6,9 @@
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.pagina">
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="250px"
         android:id="@+id/BotonMateria"
-        android:layout_height="match_parent"
+        android:layout_height="250px"
         android:text="@string/Test_Text"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button"/>

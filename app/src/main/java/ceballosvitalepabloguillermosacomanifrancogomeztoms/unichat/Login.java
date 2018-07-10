@@ -109,14 +109,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
     @Override
     public void onClick(View view) {
+        System.out.println("Antes Intent");
         if(view == buttonSignIn){
             userLogin();
         }
 
         if(view == textViewSignup){
-            finish();
             //me voy a la actividad de Registro si el usuario toca el texto "Registrarse" en la actividad
-            startActivity(new Intent(this, Registro.class));
+
+            startActivity(new Intent(getApplicationContext(), Registro.class));
+            System.out.println("Despues Intent");
+            finish();
         }
     }
 }

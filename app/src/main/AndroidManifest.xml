@@ -29,6 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Registro"></activity>
+        <activity android:name=".pagina"></activity>
+        <activity android:name=".Perfil"></activity>
     </application>
 
 </manifest>
