@@ -17,25 +17,47 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SalasChat extends ActividadBase {
+public class SalasChat extends ActividadBase implements View.OnClickListener {
 
-    private String[] materias;
-    private LayoutInflater paginas;
-    private ViewPager vp;
+    //private String [] materias;
+    //private LayoutInflater paginas;
+    //private ViewPager vp;
+    private Button [] Materias;
+    private Button Configuracion;
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salas_chat);
-        materias=getResources().getStringArray(R.array.materias);
+        //materias = getResources().getStringArray(R.array.materias);
         //get an inflater to be used to create single pages
-        paginas = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //paginas = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         //Reference ViewPager defined in activity
-        vp=(ViewPager)findViewById(R.id.viewPager);
+        //vp = (ViewPager)findViewById(R.id.viewPager);
         //set the adapter that will create the individual pages
-        vp.setAdapter(new AdaptadorPaginas());
+        //vp.setAdapter(new AdaptadorPaginas());
+        String TextoMateria;
+        int resID;
+        for (int I = 0; I < 3; I++) {
+            TextoMateria = "Materia" + I;
+            resID = getResources().getIdentifier (TextoMateria, "id", getPackageName());
+            Materias [I] = (Button) findViewById (resID);
+            Materias [I].setOnClickListener (this);
+        }
+        Configuracion = (Button) findViewById (R.id.config_button);
+        Configuracion.setOnClickListener(this);
+    }
 
+    @Override
+    public void onClick (View view) {
+        if (view == Configuracion) {
+            irPerfil (view);
+        }
+
+        else {
+
+        }
     }
 
     /**
@@ -43,17 +65,17 @@ public class SalasChat extends ActividadBase {
      * dejando en segundo plano las salas de chat y yendo a la actividad de Perfil del Usuario
      * @param view Vista actual (Contexto actual de la App)
      */
-    public void irPerfil(View view){
+    private void irPerfil (View view) {
         Intent Pref = new Intent(this, Perfil.class);
         startActivity(Pref); //creo la nueva actividad y la inicio, SalasChat queda atras en segundo plano, esta NO la destruyo
     }
 
-private class AdaptadorPaginas extends PagerAdapter{
+/*private class AdaptadorPaginas extends PagerAdapter{
 
     /**
      * Return the number of views available.
      */
-    @Override
+    /*@Override
     public int getCount() {
         return materias.length;
     }
@@ -67,12 +89,12 @@ private class AdaptadorPaginas extends PagerAdapter{
      * @param object Object to check for association with <code>view</code>
      * @return true if <code>view</code> is associated with the key object <code>object</code>
      */
-    @Override
+    /*@Override
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public Object instantiateItem(ViewGroup container, int position){
         View page = paginas.inflate(R.layout.pagina, null);
         ((Button)page.findViewById(R.id.BotonMateria)).setText(materias[position]); //seteo el texto del botón del view nuevo, esto es esencial
@@ -86,6 +108,6 @@ private class AdaptadorPaginas extends PagerAdapter{
         ((ViewPager) container).removeView((View) object);
         object=null;
     }
-}
+}*/
 }
 

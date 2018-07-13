@@ -37,4 +37,5 @@ dependencies {
 
 
     apply plugin: 'com.google.gms.google-services'
+    implementation 'com.android.support:gridlayout-v7:26.1.0'
 }

@@ -2,12 +2,13 @@ package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * clase especial que hace de placeholder para poder setear el strategy de los botones de las salas correctamente
  * lo que hago es que cualquier actividad que herede de esto, ahora sepa su propia referencia y pueda ser manipulable y obtenible
  */
-public class ActividadBase extends Activity {
+public class ActividadBase extends AppCompatActivity {
     protected Study mMyApp;
 
     public void onCreate(Bundle savedInstanceState) {

@@ -9,6 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/gradient"
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.ChatEscrito">
 
     <android.support.design.widget.FloatingActionButton
@@ -17,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_send_black"
@@ -40,7 +40,8 @@
             android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/escribe_algo" />
+            android:hint="@string/escribe_algo"
+            android:inputType="text" />
     </android.support.design.widget.TextInputLayout>
 
     <ListView
