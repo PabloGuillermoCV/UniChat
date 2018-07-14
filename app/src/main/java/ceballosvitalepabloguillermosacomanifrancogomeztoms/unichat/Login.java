@@ -1,8 +1,5 @@
 package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
-/**
- * Created by Pablo Guillermo Ceballos Vitale on 13/3/2018.
- */
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;

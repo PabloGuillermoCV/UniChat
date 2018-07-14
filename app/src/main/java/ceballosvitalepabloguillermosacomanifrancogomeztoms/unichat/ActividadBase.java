@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
  * lo que hago es que cualquier actividad que herede de esto, ahora sepa su propia referencia y pueda ser manipulable y obtenible
  */
 public class ActividadBase extends AppCompatActivity {
+
     protected Study mMyApp;
 
     public void onCreate(Bundle savedInstanceState) {

@@ -1,31 +1,22 @@
 package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.List;
-
-
 public class ChatEscrito extends ActividadBase {
 
     //objeto especial que se encargará de adaptar la vista del historial de mensajes
     private FirebaseListAdapter<ChatMessage> adp;
-
     private FloatingActionButton enviar,adjunto; //adjunto seria para adjuntar archivos, hay que ver como hacer para que el boton despliegue un menú como hace Whatsapp
     private String value;
 
@@ -60,7 +51,7 @@ public class ChatEscrito extends ActividadBase {
     }
 
     public void enviarMensaje(){
-        EditText input = (EditText)findViewById(R.id.input);
+        EditText input = findViewById(R.id.input);
 
         // leo el texto que aparece sobre el campo "input", lo subo y lo guardo en la Base de Datos
         //como una instancia nueva de "ChatMessage"
@@ -102,9 +93,9 @@ public class ChatEscrito extends ActividadBase {
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
                 // Obtengo las referencias a "mensaje.xml" para mostrar los mensajes y popular la sala de chat
-                TextView messageText = (TextView)v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView)v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView)v.findViewById(R.id.message_time);
+                TextView messageText = v.findViewById(R.id.message_text);
+                TextView messageUser = v.findViewById(R.id.message_user);
+                TextView messageTime = v.findViewById(R.id.message_time);
 
                 // Seteo los textos
                 messageText.setText(model.getMessageText());
@@ -117,6 +108,5 @@ public class ChatEscrito extends ActividadBase {
         };
         //seteo el adaptador
         vistaChat.setAdapter(adp);
-
     }
 }

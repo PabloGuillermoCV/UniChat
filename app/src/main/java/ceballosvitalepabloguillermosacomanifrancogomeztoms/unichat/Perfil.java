@@ -1,8 +1,5 @@
 package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
-/**
- * Created by Lark Digital on 13/3/2018.
- */
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +9,6 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
-
 
 public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,23 +40,27 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
         //inicializo Views
         TextView textViewUserEmail = findViewById(R.id.textViewUserEmail);
         buttonLogout = findViewById(R.id.buttonLogout);
-        buttonRooms =  findViewById(R.id.Ira_Salas);
-        //Muestro el nombre del usuario logueado
-        String displayName = user.getDisplayName();
-        //Este for es para recuperar el nombre de Usuario en caso de que justo el getDIsplayName() tire null
-        //Lo que hago es recorrer la Lista de datos del Usuario para encontrar el campo del Nombre de Usuario
-        //Basicamente, entro a la Base de Datos y busco en los datos del Usuario su nombre de Usuario
-        for(UserInfo userInfo : user.getProviderData()){
-            if (displayName == null && userInfo.getDisplayName() != null) {
-                displayName = userInfo.getDisplayName();
-            }
-        }
-        //ver de usar @string aquí para eliminar el Warning
-        textViewUserEmail.setText("Bienvenido "+ displayName);
+        buttonRooms = findViewById(R.id.Ira_Salas);
 
-        //Seteo oyente para los botones, como la actividad es un oyente en si misma, esto es legal
-        buttonLogout.setOnClickListener(this);
-        buttonRooms.setOnClickListener(this);
+        //Evita que getDisplayName pueda ser nulo
+        if (user != null) {
+            //Muestro el nombre del usuario logueado
+            String displayName = user.getDisplayName();
+            //Este for es para recuperar el nombre de Usuario en caso de que justo el getDIsplayName() tire null
+            //Lo que hago es recorrer la Lista de datos del Usuario para encontrar el campo del Nombre de Usuario
+            //Basicamente, entro a la Base de Datos y busco en los datos del Usuario su nombre de Usuario
+            for (UserInfo userInfo : user.getProviderData()) {
+                if (displayName == null && userInfo.getDisplayName() != null) {
+                    displayName = userInfo.getDisplayName();
+                }
+            }
+            //ver de usar @string aquí para eliminar el Warning
+            textViewUserEmail.setText("Bienvenido " + displayName);
+
+            //Seteo oyente para los botones, como la actividad es un oyente en si misma, esto es legal
+            buttonLogout.setOnClickListener(this);
+            buttonRooms.setOnClickListener(this);
+        }
     }
 
     /**

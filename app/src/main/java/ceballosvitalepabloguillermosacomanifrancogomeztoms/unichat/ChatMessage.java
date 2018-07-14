@@ -10,7 +10,7 @@ class ChatMessage {
     private String messageUser;
     private long messageTime;
 
-    public ChatMessage(String messageText, String messageUser) {
+    ChatMessage(String messageText, String messageUser) {
         this.messageText = messageText;
         this.messageUser = messageUser;
 
