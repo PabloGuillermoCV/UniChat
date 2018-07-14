@@ -7,9 +7,8 @@ import android.widget.Button;
 
 public class SalasChat extends ActividadBase implements View.OnClickListener {
 
-    //mandé este botón aca arriba por órden de Android Studio para evitar redundancia
+    private Button [] Materias;
     private Button Configuracion;
-
 
     @Override
     public void onCreate (Bundle savedInstanceState) {
@@ -17,16 +16,12 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
         setContentView(R.layout.activity_salas_chat);
         String TextoMateria;
         int resID;
+        Materias = new Button [4];
         for (int I = 0; I < 3; I++) {
-            //Modifiqué para que el String sea "button(I)" ya que en el XML aparece así
-            //sino, me tiraba error porque no encontraba la referencia al buscarla en el XML
-            TextoMateria = "button" + I;
+            TextoMateria = "Materia" + I;
             resID = getResources().getIdentifier (TextoMateria, "id", getPackageName());
-            //se habian olvidado de inicializar el arreglo de botones, sin esto, tira NullPointerException
-            Button[] materias = new Button[4];
-
-            materias[I] = findViewById (resID);
-            materias[I].setOnClickListener (this);
+            Materias [I] = findViewById (resID);
+            Materias [I].setOnClickListener (this);
         }
         Configuracion = findViewById (R.id.config_button);
         Configuracion.setOnClickListener(this);

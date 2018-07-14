@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/button0"
+                android:id="@+id/Materia0"
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -51,7 +51,7 @@
                 android:text="@string/Test" />
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/Materia1"
                 android:layout_width="59dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -65,20 +65,20 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/button1"
-                android:layout_alignLeft="@+id/button1"
+                android:layout_alignStart="@+id/Materia1"
+                android:layout_alignLeft="@+id/Materia1"
                 android:layout_alignTop="@+id/textView5"
                 android:text="@string/Test" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/Materia2"
                 android:layout_width="69dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/button0"
-                android:layout_alignLeft="@+id/button0"
+                android:layout_alignStart="@+id/Materia0"
+                android:layout_alignLeft="@+id/Materia0"
                 android:layout_marginStart="19dp"
                 android:layout_marginLeft="19dp"
                 android:layout_marginTop="95dp"
@@ -97,12 +97,12 @@
                 android:text="@string/Test" />
 
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/Materia4"
                 android:layout_width="52dp"
                 android:layout_height="56dp"
-                android:layout_alignStart="@+id/button1"
-                android:layout_alignLeft="@+id/button1"
-                android:layout_alignTop="@+id/button2"
+                android:layout_alignLeft="@+id/Materia1"
+                android:layout_alignStart="@+id/Materia1"
+                android:layout_alignTop="@+id/Materia2"
                 android:clickable="true"
                 android:focusable="true"
                 app:srcCompat="@drawable/com_facebook_button_send_icon_blue" />
