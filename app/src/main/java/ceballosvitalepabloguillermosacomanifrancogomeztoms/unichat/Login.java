@@ -53,10 +53,10 @@ import com.google.firebase.auth.FirebaseAuth;
         }
 
         //inicializo vistas de componentes gráficas
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        buttonSignIn = (Button) findViewById(R.id.buttonSignin);
-        textViewSignup  = (TextView) findViewById(R.id.textViewSignUp);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        buttonSignIn = findViewById(R.id.buttonSignin);
+        textViewSignup  = findViewById(R.id.textViewSignUp);
 
         progressDialog = new ProgressDialog(this);
 
@@ -107,12 +107,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
     }
 
+     /**
+      * Método para manejar los botones
+      * @param view vista actual de la App
+      */
     @Override
     public void onClick(View view) {
+        //si el botón clickeado es el de Log in, delego el Inicio de Sesión a Firebase
         if(view == buttonSignIn){
             userLogin();
         }
-
+        //Si no, salto a la actividad de Registro
         if(view == textViewSignup){
             //me voy a la actividad de Registro si el usuario toca el texto "Registrarse" en la actividad
             startActivity(new Intent(getApplicationContext(), Registro.class));

@@ -61,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:spinnerMode="dropdown"
+            android:visibility="invisible"
             android:prompt="@string/career_select"/>
 
         <Button
@@ -69,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="@+id/Registro"
-            tools:text="@string/sign_up" />
+            tools:text="@string/reg" />
 
         <TextView
             android:id="@+id/textViewSignin"

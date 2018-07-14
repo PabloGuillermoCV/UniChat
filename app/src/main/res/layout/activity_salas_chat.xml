@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button0"
                 android:layout_width="66dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -36,7 +36,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="23dp"
                 android:layout_marginLeft="23dp"
-                android:text="@string/Test" />
+                android:text="@string/rpa" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -51,7 +51,7 @@
                 android:text="@string/Test" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/button1"
                 android:layout_width="59dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -59,30 +59,30 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="144dp"
                 android:layout_marginLeft="144dp"
-                android:text="@string/Test" />
+                android:text="@string/eayg" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/button5"
-                android:layout_alignLeft="@+id/button5"
+                android:layout_alignStart="@+id/button1"
+                android:layout_alignLeft="@+id/button1"
                 android:layout_alignTop="@+id/textView5"
                 android:text="@string/Test" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/button2"
                 android:layout_width="69dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/button4"
-                android:layout_alignLeft="@+id/button4"
+                android:layout_alignStart="@+id/button0"
+                android:layout_alignLeft="@+id/button0"
                 android:layout_marginStart="19dp"
                 android:layout_marginLeft="19dp"
                 android:layout_marginTop="95dp"
-                android:text="@string/Test" />
+                android:text="@string/lfya" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -100,9 +100,11 @@
                 android:id="@+id/floatingActionButton"
                 android:layout_width="52dp"
                 android:layout_height="56dp"
-                android:layout_alignStart="@+id/button5"
-                android:layout_alignTop="@+id/button6"
+                android:layout_alignStart="@+id/button1"
+                android:layout_alignLeft="@+id/button1"
+                android:layout_alignTop="@+id/button2"
                 android:clickable="true"
+                android:focusable="true"
                 app:srcCompat="@drawable/com_facebook_button_send_icon_blue" />
 
         </RelativeLayout>

@@ -139,6 +139,10 @@
     <string name="ingrese_user">Ingrese Nombre De Usuario</string>
     <string name="welcome">Welcome</string>
     <string name="career_select">Seleccione Su Carrera</string>
+    <string name="eayg">EAyG</string>
+    <string name="lfya">LFyA</string>
+    <string name="rpa">RPA</string>
+    <string name="reg">Registrarse</string>
     <string-array name="materias">
         <item>1</item>
         <item>2</item>

@@ -15,12 +15,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class Registro extends AppCompatActivity implements View.OnClickListener {
 
     //defino vistas de  componentes gráficas
     private EditText editTextEmail;
     private EditText editTextPassword;
+    private EditText editTextName;
     private Button buttonSignup;
 
     private TextView textViewSignin;
@@ -50,11 +53,12 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
         }
 
         //Inicializo vistas de componentes gráficas
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        textViewSignin = (TextView) findViewById(R.id.textViewSignin);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextName = findViewById(R.id.editTextName);
+        textViewSignin = findViewById(R.id.textViewSignin);
 
-        buttonSignup = (Button) findViewById(R.id.buttonSignup);
+        buttonSignup = findViewById(R.id.buttonSignup);
 
         progressDialog = new ProgressDialog(this);
 
@@ -68,11 +72,12 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
      */
     private void registerUser(){
 
-        //obtengo mail y contraseña de los campos de texto
+        //obtengo mail, contraseña y Nombre de Usuario de los campos de texto
         String email = editTextEmail.getText().toString().trim();
         String password  = editTextPassword.getText().toString().trim();
+        final String Name = editTextName.getText().toString().trim();
 
-        //chequeo que el mail y la contraseña no sean vacias
+        //chequeo que el mail, contraseña y Nombre de Usuario no sean vacias, sino, envió un pop-up de error
         if(TextUtils.isEmpty(email)){
             Toast.makeText(this,"Por favor, ingrese un E-Mail",Toast.LENGTH_LONG).show();
             return;
@@ -82,9 +87,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
             Toast.makeText(this,"Por favor, ingrese una Contraseña",Toast.LENGTH_LONG).show();
             return;
         }
+        if (TextUtils.isEmpty(Name)){
+            Toast.makeText(this, "Por favor, ingrese un Nombre de Usuario", Toast.LENGTH_LONG).show();
+        }
 
-        //si ambos campos no son vacios
-        //muestro un cuadrito de progreso
+
+        //si los campos no son vacios
+        //muestro un cuadrito de progreso y  permito que Firebase Registre al nuevo usuario
 
         progressDialog.setMessage("Registrando Usuario, por favor, espere...");
         progressDialog.show();
@@ -96,6 +105,16 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //me fijo si se completó el proceso correctamente, si así fue, cierro el registro y me voy a las salas de chat directo
                         if(task.isSuccessful()){
+                            //Lo que hago aquí es seterar el Nombre de Usuario del Usuario que acaba de Registrarse
+                            //para despues recuperarlo desde Firebase
+                            //basicamente Actualizo los datos del Usuario con el Nombre de Usuario
+                            //proveido por el TextView del Nombre de Usuario
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            if(user != null) {
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(Name).build();
+                                user.updateProfile(profileUpdates);
+                            }
                             finish();
                             startActivity(new Intent(getApplicationContext(), SalasChat.class));
                         }else{
@@ -108,9 +127,14 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
 
     }
 
+    /**
+     * método onClick de la Actividad para Registro y saltado entre salas
+     * @param view Vista actual de la App
+     */
     @Override
     public void onClick(View view) {
 
+        //si el botón tocado es el de Registro, comienzo el proceso de Registrado del nuevo usuario en el sistema
         if(view == buttonSignup){
             registerUser();
         }

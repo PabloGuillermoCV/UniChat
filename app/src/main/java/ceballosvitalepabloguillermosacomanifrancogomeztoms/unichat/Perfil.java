@@ -11,16 +11,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
+import com.google.firebase.auth.UserInfo;
 
 
 public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     //Objeto Firebase Auth
     private FirebaseAuth firebaseAuth;
-
-    //Objetos del View
-    private TextView textViewUserEmail;
+    //Android Studio me decia de pasar estas variables acá arriva para evitar redundancia
     private Button buttonLogout,buttonRooms;
 
 
@@ -44,16 +42,31 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         //inicializo Views
-        textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
-        buttonLogout = (Button) findViewById(R.id.buttonLogout);
-        buttonRooms = (Button) findViewById(R.id.Ira_Salas);
+        TextView textViewUserEmail = findViewById(R.id.textViewUserEmail);
+        buttonLogout = findViewById(R.id.buttonLogout);
+        buttonRooms =  findViewById(R.id.Ira_Salas);
         //Muestro el nombre del usuario logueado
-        textViewUserEmail.setText("Bienvenido "+user.getEmail());
+        String displayName = user.getDisplayName();
+        //Este for es para recuperar el nombre de Usuario en caso de que justo el getDIsplayName() tire null
+        //Lo que hago es recorrer la Lista de datos del Usuario para encontrar el campo del Nombre de Usuario
+        //Basicamente, entro a la Base de Datos y busco en los datos del Usuario su nombre de Usuario
+        for(UserInfo userInfo : user.getProviderData()){
+            if (displayName == null && userInfo.getDisplayName() != null) {
+                displayName = userInfo.getDisplayName();
+            }
+        }
+        //ver de usar @string aquí para eliminar el Warning
+        textViewUserEmail.setText("Bienvenido "+ displayName);
 
-        //Seteo oyente para el botón, como la actividad es un oyente en si misma, esto es legal
+        //Seteo oyente para los botones, como la actividad es un oyente en si misma, esto es legal
         buttonLogout.setOnClickListener(this);
+        buttonRooms.setOnClickListener(this);
     }
 
+    /**
+     * método onClick para saltar a las distintas salas disponibles
+     * @param view vista actual de la App
+     */
     @Override
     public void onClick(View view) {
         //si se presiona el botón "LogOut"
@@ -65,6 +78,7 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
             //me voy a la actividad de Login
             startActivity(new Intent(this, Login.class));
         }
+        //Si no, el botón deberia ser el de ir a las Salas, me voy a Salaschat
         if(view == buttonRooms){
             //cierro la actividad
             finish();
