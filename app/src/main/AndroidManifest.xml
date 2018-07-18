@@ -18,10 +18,10 @@
         android:theme="@style/Theme.AppCompat.Light">
         <activity
             android:name=".SalasChat"
-            android:label="Lista De Salas Disponibles"></activity>
+            android:label="Lista De Salas Disponibles" />
         <activity
             android:name=".ChatEscrito"
-            android:label="Chat"></activity>
+            android:label="Chat" />
         <activity
             android:name=".Login">
             <intent-filter >
@@ -29,9 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registro"></activity>
-        <activity android:name=".pagina"></activity>
-        <activity android:name=".Perfil"></activity>
+        <activity android:name=".Registro" />
+        <activity android:name=".pagina" />
+        <activity android:name=".Perfil" />
     </application>
 
 </manifest>
