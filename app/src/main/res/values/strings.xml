@@ -148,4 +148,10 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string name="am1">AMI</string>
+    <string name="am2">AMII</string>
+    <string name="edd">EdD</string>
+    <string name="lpcc">LpCC</string>
+    <string name="f1">FI</string>
+    <string name="q1">QI</string>
 </resources>
