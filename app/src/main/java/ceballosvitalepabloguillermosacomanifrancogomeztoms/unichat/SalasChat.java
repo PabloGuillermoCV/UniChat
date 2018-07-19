@@ -2,12 +2,13 @@ package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
 
 public class SalasChat extends ActividadBase implements View.OnClickListener {
 
-    private Button [] Materias;
+    private FloatingActionButton [] Materias;
     private Button Configuracion;
 
     @Override
@@ -16,7 +17,7 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
         setContentView(R.layout.activity_salas_chat);
         String TextoMateria;
         int resID;
-        Materias = new Button [4];
+        Materias = new FloatingActionButton[4];
         for (int I = 0; I < 3; I++) {
             TextoMateria = "Materia" + I;
             resID = getResources().getIdentifier (TextoMateria, "id", getPackageName());
@@ -41,9 +42,9 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
             (aunque ahora esto es poco efectivo ya que tenemos una sola sala de chat)
             El saltar a la Sala en sí lo delego a un método privado
              */
-            Button aux = findViewById(view.getId());
-            String text = aux.getText().toString();
-            irSala(text);
+            FloatingActionButton aux = findViewById(view.getId());
+            //Ver que hacer ahora, FBA NO TIENE getText()
+            irSala("RPA");
         }
     }
 
