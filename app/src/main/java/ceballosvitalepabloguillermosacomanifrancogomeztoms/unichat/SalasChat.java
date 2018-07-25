@@ -47,12 +47,12 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
              */
             //FloatingActionButton aux = findViewById(view.getId());
             //Ver que hacer ahora, FBA NO TIENE getText()
-            //irSala("RPA");
+            irSala("RPA");
 
             //Solucion temporal que se me ocurrio, poner todas las materias en un mapeo
             //para poder acceder a cada una con la ID del boton
             //Esto deberia ir en otra parte, lo pongo aca por el momento
-            Map <String,String> Mapeo = new HashMap <> ();
+         /*   Map <String,String> Mapeo = new HashMap <> ();
             Mapeo.put ("Materia0","RPA");
             Mapeo.put ("Materia1","EAyG");
             Mapeo.put ("Materia2","LFyA");
@@ -66,6 +66,7 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
             String TextoId = view.getResources().getResourceName(view.getId());
             String TextoMateria = Mapeo.get (TextoId);
             irSala (TextoMateria);
+            */
         }
     }
 

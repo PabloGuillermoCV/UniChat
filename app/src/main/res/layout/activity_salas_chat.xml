@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Pizarra1"
+    android:background="@drawable/pizarra1"
     android:gravity="center"
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.SalasChat">
 
@@ -49,7 +49,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton1"
+                    android:src="@drawable/boton1"
                     android:text="@string/rpa"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -83,7 +83,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton2"
+                    android:src="@drawable/boton2"
                     android:text="@string/eayg"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -117,7 +117,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton3"
+                    android:src="@drawable/boton3"
                     android:text="@string/lfya"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -151,7 +151,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton4"
+                    android:src="@drawable/boton4"
                     android:text="@string/am1"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -185,7 +185,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton5"
+                    android:src="@drawable/boton5"
                     android:text="@string/am2"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -219,7 +219,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton6"
+                    android:src="@drawable/boton6"
                     android:text="@string/edd"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -253,7 +253,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton7"
+                    android:src="@drawable/boton7"
                     android:text="@string/q1"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -287,7 +287,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton8"
+                    android:src="@drawable/boton8"
                     android:text="@string/f1"
                     android:textSize="0sp"
                     app:fabSize="normal" />
@@ -321,7 +321,7 @@
                     android:layout_column="0"
                     android:layout_gravity="center"
                     android:layout_row="0"
-                    android:src="@drawable/Boton9"
+                    android:src="@drawable/boton9"
                     android:text="@string/lpcc"
                     android:textSize="0sp"
                     app:fabSize="normal" />
