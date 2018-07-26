@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pizarra1"
+    android:background="@drawable/gradient"
     android:gravity="center"
     tools:context="ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat.SalasChat">
 
@@ -15,7 +15,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        android:text="@string/title_activity_config" />
+        android:text="@string/info_us" />
 
     <ScrollView
         android:layout_width="match_parent"
