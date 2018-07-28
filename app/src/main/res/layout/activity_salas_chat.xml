@@ -42,17 +42,16 @@
                 android:rowCount="2"
                 android:columnCount="1">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton1"
                     android:layout_row="0"
-                    android:src="@drawable/boton1"
                     android:text="@string/rpa"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre0"
@@ -76,17 +75,16 @@
                 android:rowCount="2"
                 android:columnCount="1">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton2"
                     android:layout_row="0"
-                    android:src="@drawable/boton2"
                     android:text="@string/eayg"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre1"
@@ -110,17 +108,16 @@
                 android:rowCount="2"
                 android:columnCount="1">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton3"
                     android:layout_row="0"
-                    android:src="@drawable/boton3"
                     android:text="@string/lfya"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre2"
@@ -144,17 +141,16 @@
                 android:rowCount="2"
                 android:columnCount="1">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton4"
                     android:layout_row="0"
-                    android:src="@drawable/boton4"
                     android:text="@string/am1"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre3"
@@ -178,17 +174,16 @@
                 android:rowCount="2"
                 android:columnCount="1">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton5"
                     android:layout_row="0"
-                    android:src="@drawable/boton5"
                     android:text="@string/am2"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre4"
@@ -212,17 +207,16 @@
                 android:columnCount="1"
                 android:rowCount="2">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia5"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton6"
                     android:layout_row="0"
-                    android:src="@drawable/boton6"
                     android:text="@string/edd"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre5"
@@ -246,17 +240,16 @@
                 android:columnCount="1"
                 android:rowCount="2">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia6"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton7"
                     android:layout_row="0"
-                    android:src="@drawable/boton7"
                     android:text="@string/q1"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre6"
@@ -280,17 +273,16 @@
                 android:columnCount="1"
                 android:rowCount="2">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia7"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton8"
                     android:layout_row="0"
-                    android:src="@drawable/boton8"
                     android:text="@string/f1"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre7"
@@ -314,17 +306,16 @@
                 android:columnCount="1"
                 android:rowCount="2">
 
-                <android.support.design.widget.FloatingActionButton
+                <ImageButton
                     android:id="@+id/Materia8"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
                     android:layout_gravity="center"
+                    android:background="@drawable/boton9"
                     android:layout_row="0"
-                    android:src="@drawable/boton9"
                     android:text="@string/lpcc"
-                    android:textSize="0sp"
-                    app:fabSize="normal" />
+                    android:textSize="0sp" />
 
                 <TextView
                     android:id="@+id/nombre8"
