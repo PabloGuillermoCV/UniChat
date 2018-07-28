@@ -23,7 +23,7 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
         String TextoMateria;
         int resID;
         Materias = new ImageButton[9];
-        for (int I = 0; I < 10; I++) {
+        for (int I = 0; I < 8; I++) {
             TextoMateria = "Materia" + I;
             resID = getResources().getIdentifier (TextoMateria, "id", getPackageName());
             Materias [I] = findViewById (resID);
@@ -61,6 +61,7 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
             Mapeo.put ("Materia7","FI");
             Mapeo.put ("Materia8","LpCC");
             */
+
             String TextoId = view.getResources().getResourceName(view.getId());
             irSala (TextoId);
 
