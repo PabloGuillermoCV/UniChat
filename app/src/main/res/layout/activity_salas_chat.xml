@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,13 +30,13 @@
             android:layout_height="wrap_content"
             android:columnCount="10">
 
-            <!--Fila 0 - Columna 0 - Materia 0-->
+            <!--Fila 1 - Columna 1 - Materia 0-->
             <GridLayout
                 android:id="@+id/grid_materias0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_column="1"
                 android:layout_gravity="center"
                 android:rowCount="2"
                 android:columnCount="1">
@@ -50,6 +49,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton1"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/rpa"
                     android:textSize="0sp" />
 
@@ -65,13 +65,13 @@
 
             </GridLayout>
 
-            <!--Fila 0 - Columna 1 - Materia 1-->
+            <!--Fila 1 - Columna 3 - Materia 1-->
             <GridLayout
                 android:id="@+id/grid_materias1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="1"
+                android:layout_row="1"
+                android:layout_column="3"
                 android:layout_gravity="center"
                 android:rowCount="2"
                 android:columnCount="1">
@@ -84,6 +84,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton2"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/eayg"
                     android:textSize="0sp" />
 
@@ -99,13 +100,13 @@
 
             </GridLayout>
 
-            <!--Fila 0 - Columna 2 - Materia 2-->
+            <!--Fila 1 - Columna 5 - Materia 2-->
             <GridLayout
                 android:id="@+id/grid_materias2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="2"
+                android:layout_row="1"
+                android:layout_column="5"
                 android:layout_gravity="center"
                 android:rowCount="2"
                 android:columnCount="1">
@@ -118,6 +119,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton3"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/lfya"
                     android:textSize="0sp" />
 
@@ -133,13 +135,13 @@
 
             </GridLayout>
 
-            <!--Fila 1 - Columna 0 - Materia 3-->
+            <!--Fila 3 - Columna 1 - Materia 3-->
             <GridLayout
                 android:id="@+id/grid_materias3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="0"
+                android:layout_row="3"
+                android:layout_column="1"
                 android:layout_gravity="center"
                 android:rowCount="2"
                 android:columnCount="1">
@@ -152,6 +154,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton4"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/am1"
                     android:textSize="0sp" />
 
@@ -167,13 +170,13 @@
 
             </GridLayout>
 
-            <!--Fila 1 - Columna 1 - Materia 4-->
+            <!--Fila 3 - Columna 3 - Materia 4-->
             <GridLayout
                 android:id="@+id/grid_materias4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_row="1"
-                android:layout_column="1"
+                android:layout_row="3"
+                android:layout_column="3"
                 android:layout_gravity="center"
                 android:rowCount="2"
                 android:columnCount="1">
@@ -186,6 +189,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton5"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/am2"
                     android:textSize="0sp" />
 
@@ -201,13 +205,13 @@
 
             </GridLayout>
 
-            <!--Fila 1 - Columna 2 - Materia 5-->
+            <!--Fila 3 - Columna 5 - Materia 5-->
             <GridLayout
                 android:id="@+id/grid_materias5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_row="1"
+                android:layout_row="3"
+                android:layout_column="5"
                 android:layout_gravity="center"
                 android:columnCount="1"
                 android:rowCount="2">
@@ -220,6 +224,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton6"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/edd"
                     android:textSize="0sp" />
 
@@ -235,13 +240,13 @@
 
             </GridLayout>
 
-            <!--Fila 2 - Columna 0 - Materia 6-->
+            <!--Fila 5 - Columna 1 - Materia 6-->
             <GridLayout
                 android:id="@+id/grid_materias6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_row="2"
+                android:layout_row="5"
+                android:layout_column="1"
                 android:layout_gravity="center"
                 android:columnCount="1"
                 android:rowCount="2">
@@ -254,6 +259,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton7"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/q1"
                     android:textSize="0sp" />
 
@@ -269,13 +275,13 @@
 
             </GridLayout>
 
-            <!--Fila 2 - Columna 1 - Materia 7-->
+            <!--Fila 5 - Columna 3 - Materia 7-->
             <GridLayout
                 android:id="@+id/grid_materias7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
-                android:layout_row="2"
+                android:layout_row="5"
+                android:layout_column="3"
                 android:layout_gravity="center"
                 android:columnCount="1"
                 android:rowCount="2">
@@ -288,6 +294,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton8"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/f1"
                     android:textSize="0sp" />
 
@@ -295,21 +302,21 @@
                     android:id="@+id/nombre7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="0"
                     android:layout_row="1"
+                    android:layout_column="0"
                     android:layout_gravity="center"
                     android:textStyle="bold|italic"
                     android:text="@string/f1" />
 
             </GridLayout>
 
-            <!--Fila 2 - Columna 2 - Materia 8-->
+            <!--Fila 5 - Columna 5 - Materia 8-->
             <GridLayout
                 android:id="@+id/grid_materias8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_column="2"
-                android:layout_row="2"
+                android:layout_row="5"
+                android:layout_column="5"
                 android:layout_gravity="center"
                 android:columnCount="1"
                 android:rowCount="2">
@@ -322,6 +329,7 @@
                     android:layout_gravity="center"
                     android:background="@drawable/boton9"
                     android:layout_row="0"
+                    android:contentDescription="@string/Test"
                     android:text="@string/lpcc"
                     android:textSize="0sp" />
 
@@ -336,6 +344,30 @@
                     android:text="@string/lpcc" />
 
             </GridLayout>
+
+            <!--Separación De La Columna Y Fila 1 Con Los Bordes-->
+            <View
+                android:layout_width="27dp"
+                android:layout_column="0"
+                android:layout_height="20dp"
+                android:layout_row="0"
+                />
+
+            <!--Separación Entre Las Columnas 1 Y 3-->
+            <View
+                android:layout_width="50dp"
+                android:layout_column="2"
+                android:layout_height="25dp"
+                android:layout_row="2"
+                />
+
+            <!--Separación Entre Las Columnas Y Filas 3 Y 5-->
+            <View
+                android:layout_width="50dp"
+                android:layout_column="4"
+                android:layout_height="25dp"
+                android:layout_row="4"
+                />
 
         </GridLayout>
 
