@@ -13,7 +13,6 @@ import java.util.Map;
 
 public class SalasChat extends ActividadBase implements View.OnClickListener {
 
-    private ImageButton[] Materias;
     private Button Configuracion;
 
     @Override
@@ -22,12 +21,12 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
         setContentView(R.layout.activity_salas_chat);
         String TextoMateria;
         int resID;
-        Materias = new ImageButton[9];
-        for (int I = 0; I < 8; I++) {
+        ImageButton[] materias = new ImageButton[9];
+        for (int I = 0; I <= 8; I++) {
             TextoMateria = "Materia" + I;
             resID = getResources().getIdentifier (TextoMateria, "id", getPackageName());
-            Materias [I] = findViewById (resID);
-            Materias [I].setOnClickListener (this);
+            materias[I] = findViewById (resID);
+            materias[I].setOnClickListener (this);
         }
         Configuracion = findViewById (R.id.config_button);
         Configuracion.setOnClickListener(this);
@@ -47,20 +46,6 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
             (aunque ahora esto es poco efectivo ya que tenemos una sola sala de chat)
             El saltar a la Sala en sí lo delego a un método privado
              */
-            //Solucion temporal que se me ocurrio, poner todas las materias en un mapeo
-            //para poder acceder a cada una con la ID del boton
-            //Esto deberia ir en otra parte, lo pongo aca por el momento
-           /*Map <String,String> Mapeo = new HashMap <> ();
-            Mapeo.put ("Materia0","RPA");
-            Mapeo.put ("Materia1","EAyG");
-            Mapeo.put ("Materia2","LFyA");
-            Mapeo.put ("Materia3","AMI");
-            Mapeo.put ("Materia4","AMII");
-            Mapeo.put ("Materia5","EdD");
-            Mapeo.put ("Materia6","QI");
-            Mapeo.put ("Materia7","FI");
-            Mapeo.put ("Materia8","LpCC");
-            */
 
             String TextoId = view.getResources().getResourceName(view.getId());
             irSala (TextoId);

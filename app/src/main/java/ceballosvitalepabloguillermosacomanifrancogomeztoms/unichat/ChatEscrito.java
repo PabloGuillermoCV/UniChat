@@ -15,9 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ChatEscrito extends ActividadBase {
 
-    //objeto especial que se encargará de adaptar la vista del historial de mensajes
-    private FirebaseListAdapter<ChatMessage> adp;
-    private FloatingActionButton enviar,adjunto; //adjunto seria para adjuntar archivos, hay que ver como hacer para que el boton despliegue un menú como hace Whatsapp
+    private FloatingActionButton adjunto; //adjunto seria para adjuntar archivos, hay que ver como hacer para que el boton despliegue un menú como hace Whatsapp
     private String value;
 
     @Override
@@ -28,7 +26,7 @@ public class ChatEscrito extends ActividadBase {
         if(extras != null){
             value = extras.getString("NOMBRE"); //obtengo el nombre de la sala de chat a buscar su historial
         }
-        enviar = findViewById(R.id.fab);
+        FloatingActionButton enviar = findViewById(R.id.fab);
         enviar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg){
@@ -85,7 +83,7 @@ public class ChatEscrito extends ActividadBase {
         DatabaseReference myref = FirebaseDatabase.getInstance().getReference();
         //en la parte de "getReference()" del Firebase es donde deberiamos ver como decirle a Firebase que buscamos un chat en particular
         //getReference() me posiciona en la Raíz del árbol de la base de datos de Firebase, de ahí habria que setaar un hijo para separar los chats
-        adp = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
+        FirebaseListAdapter<ChatMessage> adp = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class,
                 R.layout.mensaje, myref) {
             /**
              * Método especial que se encargará de llenar el historial de mensajes, buscando los mismos en la Base de Datos provista por Firebase

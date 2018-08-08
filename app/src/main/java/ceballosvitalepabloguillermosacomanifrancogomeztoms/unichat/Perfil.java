@@ -55,7 +55,7 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
                 }
             }
             //ver de usar @string aquí para eliminar el Warning
-            textViewUserEmail.setText("Bienvenido " + displayName);
+            textViewUserEmail.setText(String.format("%s%s", getString(R.string.bienvenidoperfil), displayName));
 
             //Seteo oyente para los botones, como la actividad es un oyente en si misma, esto es legal
             buttonLogout.setOnClickListener(this);
