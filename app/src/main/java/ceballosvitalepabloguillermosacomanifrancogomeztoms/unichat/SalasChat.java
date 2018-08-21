@@ -1,15 +1,10 @@
 package ceballosvitalepabloguillermosacomanifrancogomeztoms.unichat;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class SalasChat extends ActividadBase implements View.OnClickListener {
 
@@ -43,10 +38,8 @@ public class SalasChat extends ActividadBase implements View.OnClickListener {
             Para saltar a ChatEscrito sin hacer un case con los botones
             Lo que hago es obtener la ID del botón que fue apretado y obtener su nombre
             para poder saltar a su sala de chat correspondiente
-            (aunque ahora esto es poco efectivo ya que tenemos una sola sala de chat)
             El saltar a la Sala en sí lo delego a un método privado
              */
-
             String TextoId = view.getResources().getResourceName(view.getId());
             irSala (TextoId);
 

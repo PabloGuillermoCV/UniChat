@@ -30,7 +30,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registro" />
-        <activity android:name=".pagina" />
         <activity android:name=".Perfil" />
     </application>
 
