@@ -105,10 +105,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //me fijo si se completó el proceso correctamente, si así fue, cierro el registro y me voy a las salas de chat directo
                         if(task.isSuccessful()){
-                            //Lo que hago aquí es seterar el Nombre de Usuario del Usuario que acaba de Registrarse
-                            //para despues recuperarlo desde Firebase
-                            //basicamente Actualizo los datos del Usuario con el Nombre de Usuario
-                            //proveido por el TextView del Nombre de Usuario
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             if(user != null) {
                                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -118,7 +114,6 @@ public class Registro extends AppCompatActivity implements View.OnClickListener 
                             finish();
                             startActivity(new Intent(getApplicationContext(), SalasChat.class));
                         }else{
-                            //sino, muestro un error
                             Toast.makeText(Registro.this,"Error en el proceso de Registro",Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();

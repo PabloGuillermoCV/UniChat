@@ -14,7 +14,6 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
 
     //Objeto Firebase Auth
     private FirebaseAuth firebaseAuth;
-    //Android Studio me decia de pasar estas variables acá arriva para evitar redundancia
     private Button buttonLogout,buttonRooms;
 
 
@@ -46,18 +45,14 @@ public class Perfil extends AppCompatActivity implements View.OnClickListener {
         if (user != null) {
             //Muestro el nombre del usuario logueado
             String displayName = user.getDisplayName();
-            //Este for es para recuperar el nombre de Usuario en caso de que justo el getDIsplayName() tire null
-            //Lo que hago es recorrer la Lista de datos del Usuario para encontrar el campo del Nombre de Usuario
-            //Basicamente, entro a la Base de Datos y busco en los datos del Usuario su nombre de Usuario
             for (UserInfo userInfo : user.getProviderData()) {
                 if (displayName == null && userInfo.getDisplayName() != null) {
                     displayName = userInfo.getDisplayName();
                 }
             }
-            //ver de usar @string aquí para eliminar el Warning
-            textViewUserEmail.setText("Bienvenido " + displayName);
+            textViewUserEmail.setText(String.format("%s%s", getString(R.string.bienvenidoperfil), displayName));
 
-            //Seteo oyente para los botones, como la actividad es un oyente en si misma, esto es legal
+            //Seteo oyente para los botones
             buttonLogout.setOnClickListener(this);
             buttonRooms.setOnClickListener(this);
         }
